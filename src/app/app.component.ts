@@ -10,4 +10,7 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'binding';
+
+  clase_toggle:string='';
+  isDisabled:boolean=true;
 }
