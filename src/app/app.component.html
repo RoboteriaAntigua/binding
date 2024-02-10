@@ -2,8 +2,8 @@
 
 <h1>Css Binding con angular</h1>
 
-<p>1 # Activar/desactivar clase: {{clase_toggle}}</p>
-<div class="{{clase_toggle}}" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti culpa explicabo numquam minima, earum repellendus nihil blanditiis aperiam, tenetur dolorum quis nam nobis ipsa porro eos? Voluptas magni vero non?
+<p>1 # Asignar clase dinamicamente con un string</p>
+<div [class]="clase_toggle" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti culpa explicabo numquam minima, earum repellendus nihil blanditiis aperiam, tenetur dolorum quis nam nobis ipsa porro eos? Voluptas magni vero non?
 </div>
 
 <button (click)="clase_toggle='clase1'">Activar clase1</button>
@@ -15,3 +15,21 @@
 <button [disabled]="isDisabled">boton inutil</button>
 <button (click)="isDisabled=!isDisabled">cambiar a disabled</button>
 
+<p>3 # Binding a css class</p>
+<div [class.clase1]="claseBinding">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, repellat culpa. Suscipit natus aperiam doloribus iusto assumenda! Est porro odit illo atque! Quaerat, ducimus culpa iure laboriosam reiciendis voluptates veniam.</div>
+<button (click)="claseBinding=!claseBinding">cambiar</button>
+
+
+<h1>Hay varias formas de asignar multiples clases a un elemento</h1>
+<p>4 # Multiples clases: </p>
+<p>con un string -> [class] =" clase1 clase2"</p>
+<div [class]="multiplesClasesString">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quo assumenda dolor unde, animi totam, enim labore voluptatem a, inventore est doloremque porro minus laborum sequi tempora necessitatibus ullam laudantium.</div>
+<button (click)="multiplesClasesString='clase1 clase2'">asignar multiples clases con un string</button>
+
+<p>5 # Multiples clases con un objeto:</p>
+<div [class]="{clase1:true, clase2:false}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet mollitia illo assumenda, officia repellendus, non autem alias earum dicta soluta odit! Tenetur nostrum minima nihil dolores quas quibusdam velit eius.</div>
+
+<p> 6 # Multiples clases con un objeto dinamicamente</p>
+<div [class]="{clase1:var1, clase2:var2}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum labore voluptas corporis error laborum assumenda nostrum amet neque nam quas, blanditiis animi id ea deserunt debitis rerum aspernatur soluta magnam!</div>
+<button (click)="var1=!var1">cambiar clase1</button>
+<button (click)="var2=!var2">cambiar clase2</button>

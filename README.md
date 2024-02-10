@@ -1,27 +1,28 @@
 # Binding
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.0.
+# 1 Mediante una variable string, le asignamos una clase dada o un 'none' 
+    <div [class]="clase_toggle"
+    <button (click)="clase_toggle='clase1'">Activar clase1</button>
+    <button (click)="clase_toggle='none'">Desactivar</button>
 
-## Development server
+# 2   Usar el 'disabled' para un botton, activar/desactivar propiedades
+    <button [disabled]="isDisabled">boton inutil</button>
+    <button (click)="isDisabled=!isDisabled">cambiar a disabled</button>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# 3  Binding a css class
+    <div [class.clase1]="claseBinding">Lorem ipsum dolor sit amet, consectetur adipisicing e.</div>
+    <button (click)="claseBinding=!claseBinding">cambiar</button>
 
-## Code scaffolding
+# 4 Hay varias formas de asignar multiples clases a un elemento
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    <p>con un string -> [class] =" clase1 clase2"</p>
+    <div [class]="multiplesClasesString">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quo assumenda dolor unde, animi totam</div>
+    <button (click)="multiplesClasesString='clase1 clase2'">asignar multiples clases con un string</button>
 
-## Build
+# 5  Multiples clases con un objeto:</p>
+    <div [class]="{clase1:true, clase2:false}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet m eius.</div>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# 6 Multiples clases con un objeto dinamicamente</p>
+    <div [class]="{clase1:var1, clase2:var2}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum labore voluprunt debitis rerum aspernatur soluta magnam!</div>
+    <button (click)="var1=!var1">cambiar clase1</button>
+    <button (click)="var2=!var2">cambiar clase2</button>

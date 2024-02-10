@@ -13,4 +13,8 @@ export class AppComponent {
 
   clase_toggle:string='';
   isDisabled:boolean=true;
+  claseBinding:boolean=false;
+  multiplesClasesString:string="";
+  var1:boolean=false;
+  var2:boolean=true;
 }
